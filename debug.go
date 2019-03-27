@@ -22,6 +22,10 @@ import (
 	"github.com/jacobsa/fuse/fuseops"
 )
 
+func OpDescription(op interface{}) string {
+	return describeRequest(op)
+}
+
 // Decide on the name of the given op.
 func opName(op interface{}) string {
 	// We expect all ops to be pointers.
