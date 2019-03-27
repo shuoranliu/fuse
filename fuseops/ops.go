@@ -684,6 +684,9 @@ type WriteFileOp struct {
 	// because it uses file mmapping machinery (http://goo.gl/SGxnaN) to write a
 	// page at a time.
 	Data []byte
+
+	Flags      uint32
+	WriteFlags uint32
 }
 
 // Synchronize the current contents of an open file to storage.

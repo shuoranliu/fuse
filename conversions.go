@@ -362,10 +362,12 @@ func convertInMessage(
 		}
 
 		o = &fuseops.WriteFileOp{
-			Inode:  fuseops.InodeID(inMsg.Header().Nodeid),
-			Handle: fuseops.HandleID(in.Fh),
-			Data:   buf,
-			Offset: int64(in.Offset),
+			Inode:      fuseops.InodeID(inMsg.Header().Nodeid),
+			Handle:     fuseops.HandleID(in.Fh),
+			Data:       buf,
+			Offset:     int64(in.Offset),
+			Flags:      in.Flags,
+			WriteFlags: in.WriteFlags,
 		}
 
 	case fusekernel.OpFsync:
