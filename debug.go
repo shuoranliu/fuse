@@ -80,6 +80,14 @@ func describeRequest(op interface{}) (s string) {
 			addComponent("mtime %v", *typed.Mtime)
 		}
 
+		if typed.Uid != nil {
+			addComponent("uid %v", *typed.Uid)
+		}
+
+		if typed.Gid != nil {
+			addComponent("gid %v", *typed.Gid)
+		}
+
 	case *fuseops.ReadFileOp:
 		addComponent("handle %d", typed.Handle)
 		addComponent("offset %d", typed.Offset)
