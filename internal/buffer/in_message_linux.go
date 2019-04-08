@@ -18,4 +18,4 @@ package buffer
 //
 // Experimentally, Linux appears to refuse to honor a MaxWrite setting in an
 // INIT response of more than 128 KiB.
-const MaxWriteSize = 1 << 17
+const MaxWriteSize = 1 << 20
